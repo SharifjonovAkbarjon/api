@@ -5,13 +5,19 @@
     
 }
 
+body{
+    padding: 0 40px;
+    background: rgb(46,74,104) ;
+}
+
 .wrapper{
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
     height: 12px;
-    gap: 12px;
+    gap: 20px;
     justify-content: center;
+    /* overflow: auto; */
 }
 
 .card{
@@ -19,6 +25,21 @@
     padding: 16px;
     border-radius: 14px;
     box-shadow: 0 0 16px #0004;
+    background: rgb(255,207,124);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+button{
+    padding: 9px 24px;
+    background: rgb(255,207,124);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+
 }
 
 .card__image{

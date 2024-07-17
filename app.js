@@ -2,6 +2,7 @@
 const API_URL = "https://jsonplaceholder.typicode.com"
 const wrapper = document.querySelector(".wrapper")
 const loading = document.querySelector(".loading")
+const btn = document.querySelector(".btn")
 
 async function laylo (api){
     let reponse = await fetch(`${api}/users`)
@@ -10,6 +11,9 @@ async function laylo (api){
         .json()
         .then((res)=> createCard(res))
         .catch((err)=> console.log(err))
+        .finally(()=>{
+            loading.style.display = "none"
+        })
 
 }
 
@@ -21,11 +25,13 @@ function createCard(data){
         card.classList.add("card")
         card.innerHTML=`
             <div class="card__image"></div>
+            <p>${users.id}</p>     
             <h3>${users.name}</h3>
-            <p>${users.username}</p>
+            <p>${users.username}</p>    
+            <button class = "btn">View More</button>
+
         `
         wrapper.appendChild(card)
-        // console.log(card);
     })
 }
 
